@@ -1,9 +1,4 @@
 @echo off
-echo This will force an update for Teams
-echo If your Teams is working correctly
-echo please close this window and delete this script
-echo.
-pause
 
 echo Ensuring Teams is closed
 timeout /t 2 /nobreak >nul
