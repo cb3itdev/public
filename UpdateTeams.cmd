@@ -12,12 +12,12 @@ echo.
 
 echo Downloading Teams
 if NOT exist C:\Temp mkdir C:\Temp
-powershell Invoke-WebRequest -Uri "https://statics.teams.cdn.office.net/production-windows-x86/lkg/MSTeamsSetup.exe" -OutFile C:\temp\MSTeamsSetup.exe
+powershell Invoke-WebRequest -Uri "https://statics.teams.cdn.office.net/production-windows-x86/lkg/MSTeamsSetup.exe" -OutFile .\MSTeamsSetup.exe
 timeout /t 2 /nobreak >nul
 echo.
 
 echo Updating....
-start /wait C:\temp\MSTeamsSetup.exe -s
+start /nowait .\MSTeamsSetup.exe -s
 echo.
 
 echo All done. Press any key to close this window.
