@@ -20,5 +20,6 @@ echo Updating....
 start /nowait .\MSTeamsSetup.exe -s
 echo.
 
-echo All done. Press any key to close this window.
-pause >nul
+echo Teams Updater should be running.
+echo Closing this windows in 5 seconds.
+timeout /t 5 /nobreak >nul
