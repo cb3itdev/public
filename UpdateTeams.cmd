@@ -12,7 +12,7 @@ timeout /t 2 /nobreak >nul
 echo.
 
 echo Updating....
-start /nowait .\MSTeamsSetup.exe -s
+start .\MSTeamsSetup.exe -s
 echo.
 
 echo Teams Updater should be running.
