@@ -41,6 +41,7 @@ if %errorlevel%==3 set "selected=Firmware"
 if %errorlevel%==4 set "selected=BIOS"
 echo.
 
+
 ::run HPIA with automated mode
 CD C:\SWSetup\HPIA
 start HPImageAssistant.exe /Operation:Analyze /Category:%selected% /Selection:All /Action:Install /noninteractive /ReportFolder:C:\SWSetup
