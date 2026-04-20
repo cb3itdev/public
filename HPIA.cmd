@@ -26,6 +26,7 @@ echo Letting filesystem stablize...
 timeout /t 5 > NUL
 echo.
 
+
 ::select ALL updates or select only Drivers, Dock Firmware, or Bios
 echo Select 1 to update Drivers, Dock Firmware, and Bios
 echo Select 2 to update only Drivers
@@ -33,14 +34,12 @@ echo Select 3 to update only Dock Firmware
 echo Select 4 to update only Bios
 echo.
 echo "Please make your selection: >"
-
 choice /c:1234
-
 if %errorlevel%==1 set "selected=ALL"
 if %errorlevel%==2 set "selected=Drivers"
 if %errorlevel%==3 set "selected=Firmware"
 if %errorlevel%==4 set "selected=BIOS"
-
+echo.
 
 ::run HPIA with automated mode
 CD C:\SWSetup\HPIA
