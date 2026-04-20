@@ -33,9 +33,9 @@ echo Select 3 to update only Dock Firmware
 echo Select 4 to update only Bios
 echo.
 echo "Please make your selection: >"
-pause
+
 choice /c:1234
-pause
+
 if %errorlevel%==1 set "selected=ALL"
 if %errorlevel%==2 set "selected=Drivers"
 if %errorlevel%==3 set "selected=Firmware"
