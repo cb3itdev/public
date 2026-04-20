@@ -26,7 +26,7 @@ echo Letting filesystem stablize...
 timeout /t 5 > NUL
 echo.
 
-
+::select ALL updates or select only Drivers, Dock Firmware, or Bios
 echo Select 1 to update Drivers, Dock Firmware, and Bios
 echo Select 2 to update only Drivers
 echo Select 3 to update only Dock Firmware
