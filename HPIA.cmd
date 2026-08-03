@@ -18,18 +18,19 @@ CD C:\SWSetup
 powershell $HPexe = "(Invoke-WebRequest -Uri '%HPIApage%' -UseBasicParsing).Links.href | Where-Object {$_ -match '.exe$'}"; Invoke-WebRequest -Uri $HPexe -OutFile C:\SWSetup\HPIA.exe
 timeout /t 2 > NUL
 
+::grab 7zr
+powershell $7zrexe = "(Invoke-WebRequest -Uri '%7zippage%' -UseBasicParsing).Links.href | Where-Object {$_ -match '.exe$'}"; Invoke-WebRequest -Uri $7zrexe -OutFile C:\SWSetup\7zr.exe
+timeout /t 2 > NUL
+
 
 ::extract HPIA.exe
 if exist C:\SWSetup\HPIA rmdir /S /Q C:\SWSetup\HPIA
 Echo Extracting HPIA
-"%programfiles%\7-zip\7z.exe" x "C:\SWSetup\HPIA.exe" -o"C:\SWSetup\HPIA\" -y
+"C:\SWSetup\7zr.exe" x "C:\SWSetup\HPIA.exe" -o"C:\SWSetup\HPIA\" -y
 echo Letting filesystem stablize...
 timeout /t 5 > NUL
 echo.
 
-::grab 7zr
-powershell $7zrexe = "(Invoke-WebRequest -Uri '%7zippage%' -UseBasicParsing).Links.href | Where-Object {$_ -match '.exe$'}"; Invoke-WebRequest -Uri $7zrexe -OutFile C:\SWSetup\7zr.exe
-timeout /t 2 > NUL
 
 ::select ALL updates or select only Drivers, Dock Firmware, or Bios
 echo Select 1 to update Drivers, Dock Firmware, and Bios
