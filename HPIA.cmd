@@ -7,6 +7,7 @@ if not %errorlevel%==0 echo  This must be run as administrator & echo  Press any
 
 ::HPIA main page
 set "HPIApage=https://ftp.ext.hp.com/pub/caps-softpaq/cmit/HPIA.html"
+set "7zippage=https://7-zip.org/download.html"
 set "selected=0"
 ::working dir
 if NOT exist C:\SWSetup mkdir C:\SWSetup
@@ -26,6 +27,9 @@ echo Letting filesystem stablize...
 timeout /t 5 > NUL
 echo.
 
+::grab 7zr
+powershell $7zrexe = "(Invoke-WebRequest -Uri '%7zippage%' -UseBasicParsing).Links.href | Where-Object {$_ -match '.exe$'}"; Invoke-WebRequest -Uri $7zrexe -OutFile C:\SWSetup\7zr.exe
+timeout /t 2 > NUL
 
 ::select ALL updates or select only Drivers, Dock Firmware, or Bios
 echo Select 1 to update Drivers, Dock Firmware, and Bios
