@@ -18,6 +18,7 @@ CD C:\SWSetup
 powershell $HPexe = "(Invoke-WebRequest -Uri '%HPIApage%' -UseBasicParsing).Links.href | Where-Object {$_ -match '.exe$'}"; Invoke-WebRequest -Uri $HPexe -OutFile C:\SWSetup\HPIA.exe
 timeout /t 2 > NUL
 
+
 ::grab 7zr
 powershell $7zrexe = "(Invoke-WebRequest -Uri '%7zippage%' -UseBasicParsing).Links.href | Where-Object {$_ -match '.exe$'}"; Invoke-WebRequest -Uri $7zrexe -OutFile C:\SWSetup\7zr.exe
 timeout /t 2 > NUL
