@@ -20,7 +20,7 @@ timeout /t 2 > NUL
 
 
 ::grab 7zr
-powershell $7zr = "(Invoke-WebRequest -Uri '%7zippage%' -UseBasicParsing).Links.href | Where-Object {$_ -match '7zr.exe$'}"; Invoke-WebRequest -Uri $7zr -OutFile C:\SWSetup\7zr.exe
+powershell $7zr = "(Invoke-WebRequest -Uri 'https://7-zip.org/download.html' -UseBasicParsing).Links.href | Where-Object {$_ -match '7zr.exe$'}"; Invoke-WebRequest -Uri $7zr -OutFile C:\SWSetup\7zr.exe
 timeout /t 2 > NUL
 
 
