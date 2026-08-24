@@ -11,14 +11,15 @@ set "selected=0"
 
 
 ::parse the office link above, grab all links, search list for exe, download latest executable
-powershell $ODTexe = "(Invoke-WebRequest -Uri '%ODTpage%' -UseBasicParsing).Links.href | Where-Object {$_ -match '.exe$'}"; Invoke-WebRequest -Uri $ODTexe -OutFile .\InstallOffice.exe
+mkdir c:\temp > nul
+powershell $ODTexe = "(Invoke-WebRequest -Uri '%ODTpage%' -UseBasicParsing).Links.href | Where-Object {$_ -match '.exe$'}"; Invoke-WebRequest -Uri $ODTexe -OutFile C:\temp\InstallOffice.exe
 timeout /t 2 > NUL
 
 
 ::run the installer
 echo Letting filesystem stablize...
 timeout /t 5 > NUL
-start .\InstallOffice.exe /quiet /passive
+start c:\temp\InstallOffice.exe  /passive
 echo.
 
 echo 
