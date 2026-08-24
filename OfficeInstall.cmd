@@ -21,8 +21,7 @@ echo Letting filesystem stablize...
 timeout /t 5 > NUL
 start c:\temp\InstallOffice.exe  /passive
 echo.
-
-echo 
+ 
 echo Closing in 10 seconds......
 timeout /t 10 > NUL
 
