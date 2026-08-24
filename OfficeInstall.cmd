@@ -18,7 +18,7 @@ timeout /t 2 > NUL
 ::run the installer
 echo Letting filesystem stablize...
 timeout /t 5 > NUL
-start .\InstallOffice.exe /S
+start .\InstallOffice.exe /quiet /passive
 echo.
 
 echo 
