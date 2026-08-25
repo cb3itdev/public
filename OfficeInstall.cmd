@@ -17,7 +17,7 @@ powershell $ODTexe = "(Invoke-WebRequest -Uri '%ODTpage%' -UseBasicParsing).Link
 ::extract ODT and run the installer with default configuration-64 bit office
 echo Letting filesystem stablize...
 timeout /t 5 > NUL
-start /wait C:\Temp\install365\InstallOffice.exe /quiet /extract:c:\temp\install365\
+start /wait C:\Temp\install365\InstallOffice.exe /quiet /passive /extract:c:\temp\install365\
 forfiles /p C:\Temp\install365 /S /M *.xml /C "cmd /c start /wait C:\Temp\install365\setup.exe /configure @path"
 echo.
 
