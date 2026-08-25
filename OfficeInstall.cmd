@@ -23,7 +23,7 @@ echo.
 
 ::remove temporary files
 echo Letting filesystem stablize...
-timeout /t 10 > NUL
+timeout /t 30 > NUL
 rmdir /s /q C:\Temp\install365
 
 
