@@ -6,7 +6,7 @@ if not %errorlevel%==0 echo  This must be run as administrator & echo  Press any
 
 
 ::Windows Installation Assistant 25H2
-set "WIApage=https://www.microsoft.com/en-us/download/details.aspx?id=49117"
+set "WIApage=https://www.microsoft.com/en-in/download/details.aspx?id=108398"
 
 
 ::create temp dir, parse the WIA link above, grab all links, search list for exe, download latest executable
